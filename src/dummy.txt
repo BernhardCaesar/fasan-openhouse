@@ -1,0 +1,352 @@
+{
+    "assetAdministrationShells": [
+        {
+            "modelType": "AssetAdministrationShell",
+            "assetInformation": {
+                "assetKind": "Instance",
+                "globalAssetId": "amids://fasan.lit/DD4D757F"
+            },
+            "submodels": [
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "amids://fasan.lit/CD8CD211/661A5313"
+                        }
+                    ],
+                    "type": "ModelReference"
+                },
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "amids://fasan.lit/CD8CD211/AC923085"
+                        }
+                    ],
+                    "type": "ModelReference"
+                },
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "amids://fasan.lit/CD8CD211/D710E0D4"
+                        }
+                    ],
+                    "type": "ModelReference"
+                },
+                {
+                    "keys": [
+                        {
+                            "type": "Submodel",
+                            "value": "amids://fasan.lit/CD8CD211/661A4313"
+                        }
+                    ],
+                    "type": "ModelReference"
+                }
+            ],
+            "id": "amids://fasan.lit/CD8CD211",
+            "idShort": "ProductPass6DC"
+        }
+    ],
+    "submodels": [
+        {
+            "modelType": "Submodel",
+            "kind": "Instance",
+            "semanticId": {
+                "keys": [
+                    {
+                        "type": "ConceptDescription",
+                        "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate"
+                    }
+                ],
+                "type": "ModelReference"
+            },
+            "administration": {
+                "creator": {
+                    "keys": [
+                        {
+                            "type": "GlobalReference",
+                            "value": "AasSuite"
+                        }
+                    ],
+                    "type": "ExternalReference"
+                },
+                "revision": "0",
+                "version": "1"
+            },
+            "id": "amids://fasan.lit/CD8CD211/661A5313",
+            "idShort": "Nameplate",
+            "submodelElements": [
+                {
+                    "modelType": "MultiLanguageProperty",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAO677#002"
+                            }
+                        ],
+                        "type": "ModelReference"
+                    },
+                    "value": [
+                        {
+                            "language": "de",
+                            "text": "LIT Factory"
+                        }
+                    ],
+                    "idShort": "ManufacturerName"
+                },
+                {
+                    "modelType": "MultiLanguageProperty",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAW338#001"
+                            }
+                        ],
+                        "type": "ModelReference"
+                    },
+                    "value": [
+                        {
+                            "language": "en",
+                            "text": "6DC OpenHouseDemo"
+                        }
+                    ],
+                    "idShort": "ManufacturerProductDesignation"
+                },
+                {
+                    "modelType": "MultiLanguageProperty",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAU731#001"
+                            }
+                        ],
+                        "type": "ModelReference"
+                    },
+                    "value": [
+                        {
+                            "language": "de",
+                            "text": "LIT Factory Showcase Products"
+                        }
+                    ],
+                    "idShort": "ManufacturerProductFamily"
+                },
+                {
+                    "modelType": "Property",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAM556#002"
+                            }
+                        ],
+                        "type": "ModelReference"
+                    },
+                    "value": "V5",
+                    "valueType": "xs:string",
+                    "idShort": "SerialNumber"
+                },
+                {
+                    "modelType": "Property",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAR972#002"
+                            }
+                        ],
+                        "type": "ModelReference"
+                    },
+                    "value": "2024-07-22",
+                    "valueType": "xs:date",
+                    "idShort": "DateOfManufacture"
+                },
+                {
+                    "modelType": "Property",
+                    "semanticId": {
+                        "keys": [
+                            {
+                                "type": "ConceptDescription",
+                                "value": "0173-1#02-AAO259#004"
+                            }
+                        ],
+                        "type": "ModelReference"
+                    },
+                    "value": "Austria",
+                    "valueType": "xs:string",
+                    "idShort": "CountryOfOrigin"
+                }
+            ]
+        },
+        {
+            "modelType": "Submodel",
+            "kind": "Instance",
+            "id": "amids://fasan.lit/CD8CD211/AC923085",
+            "idShort": "TechnicalData",
+            "submodelElements": [
+                {
+                    "modelType": "Property",
+                    "value": "500",
+                    "valueType": "xs:int",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "g"
+                        }
+                    ],
+                    "idShort": "NominalMass"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "165",
+                    "valueType": "xs:int",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "g"
+                        }
+                    ],
+                    "idShort": "NominalHeight"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "230",
+                    "valueType": "xs:int",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "mm"
+                        }
+                    ],
+                    "idShort": "NominalDiameter"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "3",
+                    "valueType": "xs:float",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "mm"
+                        }
+                    ],
+                    "idShort": "NominalWallThickness"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "PP",
+                    "valueType": "xs:string",
+                    "idShort": "Material"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "Virgin",
+                    "valueType": "xs:string",
+                    "idShort": "Color"
+                }
+            ]
+        },
+        {
+            "modelType": "Submodel",
+            "kind": "Instance",
+            "id": "amids://fasan.lit/CD8CD211/D710E0D4",
+            "idShort": "ProductionData",
+            "submodelElements": [
+                {
+                    "modelType": "Property",
+                    "value": "Engel 2460/DUO350",
+                    "valueType": "xs:string",
+                    "idShort": "InjectionMouldingMachineName"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "1423",
+                    "valueType": "xs:string",
+                    "idShort": "InjectionMouldingMachineLITNumber"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "65",
+                    "valueType": "xs:float",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "s"
+                        }
+                    ],
+                    "idShort": "CycleTime"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "860",
+                    "valueType": "xs:float",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "bar"
+                        }
+                    ],
+                    "idShort": "MaximumInjectionPressure"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "6DC",
+                    "valueType": "xs:string",
+                    "idShort": "InjectionMouldingToolName"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "PP HG385MO",
+                    "valueType": "xs:string",
+                    "idShort": "GradeName"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "None",
+                    "valueType": "xs:string",
+                    "idShort": "Additives"
+                }
+            ]
+        },
+        {
+            "modelType": "Submodel",
+            "kind": "Instance",
+            "id": "amids://fasan.lit/CD8CD211/661A4313",
+            "idShort": "QualityData",
+            "submodelElements": [
+                {
+                    "modelType": "Property",
+                    "value": "Weight Control",
+                    "valueType": "xs:string",
+                    "idShort": "MethodOfQualityInspection"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "N/A",
+                    "valueType": "xs:string",
+                    "idShort": "MeasurementId"
+                },
+                {
+                    "modelType": "Property",
+                    "value": "N/A",
+                    "valueType": "xs:string",
+                    "idShort": "DateOfQualityInspection"
+                },
+                {
+                    "modelType": "Property",
+                    "valueType": "xs:float",
+                    "description": [
+                        {
+                            "language": "en",
+                            "text": "g"
+                        }
+                    ],
+                    "idShort": "MeasuredMass"
+                }
+            ]
+        }
+    ]
+}

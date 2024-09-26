@@ -1,0 +1,383 @@
+{
+  "assetAdministrationShells": [
+    {
+      "modelType": "AssetAdministrationShell",
+      "assetInformation": {
+        "assetKind": "Type",
+        "globalAssetId": "amids://fasan.lit/DD4D757F"
+      },
+      "submodels": [
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "amids://fasan.lit/3603DA82/C2C73954"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "amids://fasan.lit/3603DA82/AC923085"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "amids://fasan.lit/3603DA82/D710E0D4"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "amids://fasan.lit/3603DA82/661A5313"
+            }
+          ],
+          "type": "ModelReference"
+        }
+      ],
+      "id": "amids://fasan.lit/3603DA82",
+      "idShort": "ProductPass6DC"
+    }
+  ],
+  "submodels": [
+    {
+      "modelType": "Submodel",
+      "kind": "Template",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "ConceptDescription",
+            "value": "https://admin-shell.io/zvei/nameplate/2/0/Nameplate"
+          }
+        ],
+        "type": "ModelReference"
+      },
+      "administration": {
+        "creator": {
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "AasSuite"
+            }
+          ],
+          "type": "ExternalReference"
+        },
+        "revision": "0",
+        "version": "1"
+      },
+      "id": "amids://fasan.lit/3603DA82/C2C73954",
+      "idShort": "Nameplate",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "value": "0173-1#02-AAY811#001"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "value": "amids://fasan.lit/AA73A356642AF5F735320DC2",
+          "valueType": "xs:string",
+          "idShort": "URIOfTheProduct"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "value": "0173-1#02-AAM556#002"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "value": "AA73A356642AF5F735320DC2",
+          "valueType": "xs:string",
+          "idShort": "SerialNumber"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "value": "0173-1#02-AAP906#001"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "value": "2023",
+          "valueType": "xs:string",
+          "idShort": "YearOfConstruction"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "value": "0173-1#02-AAR972#002"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "value": "2024-02-19",
+          "valueType": "xs:date",
+          "idShort": "DateOfManufacture"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "value": "0173-1#02-AAO259#004"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "value": "Austria",
+          "valueType": "xs:string",
+          "idShort": "CountryOfOrigin"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "value": "0173-1#02-AAO677#002"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "value": [
+            {
+              "language": "de",
+              "text": "LIT Factory"
+            }
+          ],
+          "idShort": "ManufacturerName"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "value": "0173-1#02-AAW338#001"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "value": [
+            {
+              "language": "en",
+              "text": "Frisbee Recyclingdemo"
+            }
+          ],
+          "idShort": "ManufacturerProductDesignation"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "ConceptDescription",
+                "value": "0173-1#02-AAU731#001"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "value": [
+            {
+              "language": "de",
+              "text": "LIT Factory Showcase Products"
+            }
+          ],
+          "idShort": "ManufacturerProductFamily"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Template",
+      "id": "amids://fasan.lit/3603DA82/AC923085",
+      "idShort": "TechnicalData",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "value": "260",
+          "valueType": "xs:int",
+          "description": [
+            {
+              "language": "en",
+              "text": "mm"
+            }
+          ],
+          "idShort": "NominalDiameter"
+        },
+        {
+          "modelType": "Property",
+          "value": "180",
+          "valueType": "xs:int",
+          "description": [
+            {
+              "language": "en",
+              "text": "g"
+            }
+          ],
+          "idShort": "NominalMass"
+        },
+        {
+          "modelType": "Property",
+          "value": "1.5",
+          "valueType": "xs:float",
+          "description": [
+            {
+              "language": "en",
+              "text": "mm"
+            }
+          ],
+          "idShort": "NominalWallThickness"
+        },
+        {
+          "modelType": "Property",
+          "value": "HDPE",
+          "valueType": "xs:string",
+          "idShort": "Material"
+        },
+        {
+          "modelType": "Property",
+          "value": "Midnight Black",
+          "valueType": "xs:string",
+          "idShort": "Color"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Template",
+      "id": "amids://fasan.lit/3603DA82/D710E0D4",
+      "idShort": "ProductionData",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "value": "ENgel VC80/85",
+          "valueType": "xs:string",
+          "idShort": "InjectionMouldingMachineName"
+        },
+        {
+          "modelType": "Property",
+          "value": "1423",
+          "valueType": "xs:string",
+          "idShort": "InjectionMouldingMachineLITNumber"
+        },
+        {
+          "modelType": "Property",
+          "value": "65.5",
+          "valueType": "xs:float",
+          "description": [
+            {
+              "language": "en",
+              "text": "s"
+            }
+          ],
+          "idShort": "CycleTime"
+        },
+        {
+          "modelType": "Property",
+          "value": "604.3",
+          "valueType": "xs:float",
+          "description": [
+            {
+              "language": "en",
+              "text": "bar"
+            }
+          ],
+          "idShort": "MaximumInjectionPressure"
+        },
+        {
+          "modelType": "Property",
+          "value": "MT Frisbee",
+          "valueType": "xs:string",
+          "idShort": "InjectionMouldingToolName"
+        },
+        {
+          "modelType": "Property",
+          "value": "0145",
+          "valueType": "xs:string",
+          "idShort": "InjectionMouldingToolLITNumber"
+        },
+        {
+          "modelType": "Property",
+          "value": "PP HD120MO",
+          "valueType": "xs:string",
+          "idShort": "PolymerMaterial"
+        },
+        {
+          "modelType": "Property",
+          "value": "Masterbatch Schwarz",
+          "valueType": "xs:string",
+          "idShort": "Additives"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Template",
+      "id": "amids://fasan.lit/3603DA82/661A5313",
+      "idShort": "QualityData",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "value": "N/A",
+          "valueType": "xs:string",
+          "idShort": "MethodOfQualityInspection"
+        },
+        {
+          "modelType": "Property",
+          "value": "N/A",
+          "valueType": "xs:string",
+          "idShort": "MeasurementId"
+        },
+        {
+          "modelType": "Property",
+          "value": "N/A",
+          "valueType": "xs:string",
+          "idShort": "DateOfQualityInspection"
+        },
+        {
+          "modelType": "Property",
+          "value": "N/A",
+          "valueType": "xs:string",
+          "idShort": "QualityAssessment"
+        },
+        {
+          "modelType": "Property",
+          "value": "N/A",
+          "valueType": "xs:string",
+          "description": [
+            {
+              "language": "en",
+              "text": "px"
+            }
+          ],
+          "idShort": "DevianceFromNominalDiameter"
+        }
+      ]
+    }
+  ]
+}

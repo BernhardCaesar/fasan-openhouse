@@ -1,15 +1,17 @@
-<script setup >
-import imp from "../images/IMP.png";
-import imm from "../images/IMM.png";
-import mtl from "../images/MTL.png";
-import mat from "../images/MAT.png";
-import {onMounted, ref} from "vue";
-import {store} from "../store.js";
-import {AwsConnector} from "../scripts/awsconnector.ts";
+<script setup lang="ts">
+  import imp from "../images/IMP.png";
+  import imm from "../images/IMM.png";
+  import mtl from "../images/MTL.png";
+  import mat from "../images/MAT.png";
+  import {onMounted, ref} from "vue";
+  import {store} from "../store.js";
+  import {getScale} from "../scripts/qualityconnector.ts";
+  import {getDateTime} from "../scripts/datatime.ts";
 
-const selectedProperties = ref({})
-const selectedSubmodel = ref("Nameplate")
-const isPublished = ref(false)
+  const selectedProperties = ref({})
+  const selectedSubmodel = ref("Nameplate")
+  const isPublished = ref(false)
+  const measurementCounter = ref(1)
 
   onMounted(() => {
     onChangeSubmodel()
@@ -20,21 +22,40 @@ const isPublished = ref(false)
     selectedProperties.value = store.getPropertyRecords(shortId)
   }
 
-  function publishAas() {
-    const sender = new AwsConnector()
-    sender.uploadData(store.meta.serializeAas())
+  type ScaleResponse = {
+    scale: number;
+  }
+
+  // TODO: Change publishing
+  async function publishAas() {
     isPublished.value = true
     setTimeout(() => {
       isPublished.value = false
     }, 5000)
   }
+
+  
+  async function handleMeasurementRequest(): Promise<number> {
+    const weight = await getScale()
+
+    const updates = [
+      { idShort: "MeasurementId", iri: "", value: measurementCounter.value, unit: "" },
+      { idShort: "DateOfQualityInspection", iri: "", value: getDateTime(), unit: ""},
+      { idShort: "MeasuredMass", iri: "", value:weight, unit: "" }
+    ]
+
+    store.meta.updateSubmodelProperties("QualityData", updates);
+    measurementCounter.value += 1;
+    console.log("Scale measurement done")
+  }
+
 </script>
 
 <template>
   <div class="flex flex-col items-center w-full">
     <div class="flex flex-row items-start">
       <button @click="publishAas" class="btn btn-primary">Publish Passport</button>
-      <button @click="" class="btn btn-primary ml-10">Request Measurement</button>
+      <button @click="handleMeasurementRequest" class="btn btn-primary ml-10">Request Measurement</button>
     </div>
     <div class="flex flex-row  w-11/12">
       <div class="flex flex-row w-full">

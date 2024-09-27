@@ -30,7 +30,6 @@ export class AasMetadata {
              record.value = updatedProperties.find(p => p.idShort === record.idShort)?.value || record.value
          }
 
-
         const submodel = this._shell.submodels?.find(s => s.idShort == submodelIdShort)
         if (!submodel) return
 
@@ -70,6 +69,14 @@ export class AasMetadata {
                     element.displayName = [new aas.types.LangStringNameType("en", iri)]
                     let unit = element.description?.[0].text ?? ""
                     submodelProperties.push({idShort: element.idShort!, iri, value: element.value, unit: unit})
+                }
+
+                if (aas.types.isMultiLanguageProperty(element)) {
+                    const iri = makePropertyIri(submodel.id, element.idShort!)
+                    element.displayName = [new aas.types.LangStringNameType("en", iri)]
+                    const unit = element.description?.[0].text ?? ""
+                    const value = element.value![0].text ?? ""
+                    submodelProperties.push({idShort: element.idShort!, iri, value: value  , unit: unit})
                 }
             }
             displayProperties[submodel.idShort!] = submodelProperties

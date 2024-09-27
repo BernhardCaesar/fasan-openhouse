@@ -1,4 +1,4 @@
-import {reactive, ref, toRaw} from 'vue'
+import {reactive, toRaw} from 'vue'
 import {AasMetadata} from "./scripts/aasmetadata.ts";
 
 

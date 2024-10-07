@@ -5,64 +5,72 @@
   import mat from "../images/MAT.png";
   import {onMounted, ref} from "vue";
   import {store} from "../store.js";
-  import {getScale} from "../scripts/qualityconnector.ts";
   import {getDateTime} from "../scripts/datatime.ts";
+  import {requestMass, uploadShell} from "../scripts/amidslink.ts";
 
   const selectedProperties = ref({})
   const selectedSubmodel = ref("Nameplate")
-  const isPublished = ref(false)
+
+  const successMessage = ref("")
+  const isSuccess = ref(false)
+
   const measurementCounter = ref(1)
 
   onMounted(() => {
     onChangeSubmodel()
   })
 
-  function onChangeSubmodel() {
+  async function onChangeSubmodel() {
     const shortId = selectedSubmodel.value.replace(/\s+/g, '');
     selectedProperties.value = store.getPropertyRecords(shortId)
   }
 
-  type ScaleResponse = {
-    scale: number;
-  }
-
-  // TODO: Change publishing
-  async function publishAas() {
-    isPublished.value = true
+  async function showSuccess(message: string) {
+    successMessage.value = message
+    isSuccess.value = true
     setTimeout(() => {
-      isPublished.value = false
-    }, 5000)
+      isSuccess.value = false
+    }, 3000)
   }
 
-  
+
   async function handleMeasurementRequest(): Promise<number> {
-    const weight = await getScale()
+    const weight = await requestMass()
 
     const updates = [
-      { idShort: "MeasurementId", iri: "", value: measurementCounter.value, unit: "" },
-      { idShort: "DateOfQualityInspection", iri: "", value: getDateTime(), unit: ""},
-      { idShort: "MeasuredMass", iri: "", value:weight, unit: "" }
+      { type: "Property", idShort: "MeasurementId", iri: "", value: measurementCounter.value, unit: "" },
+      { type: "Property", idShort: "DateOfQualityInspection", iri: "", value: getDateTime(), unit: ""},
+      { type: "Property", idShort: "MeasuredMass", iri: "", value:weight, unit: "" }
     ]
 
     store.meta.updateSubmodelProperties("QualityData", updates);
+    await showSuccess("Productpass successfully synchronized!");
     measurementCounter.value += 1;
-    console.log("Scale measurement done")
+  }
+
+  async function publishAas() {
+    const aasObject = store.meta.serializeAas()
+    const response = await uploadShell(aasObject)
+    if (response !== null) {
+      await showSuccess("Productpass successfully published!")
+    }
+
   }
 
 </script>
 
 <template>
-  <div class="flex flex-col items-center w-full">
-    <div class="flex flex-row items-start">
-      <button @click="publishAas" class="btn btn-primary">Publish Passport</button>
-      <button @click="handleMeasurementRequest" class="btn btn-primary ml-10">Request Measurement</button>
+  <div class="flex flex-col items-center w-full h-full">
+    <div class="flex flex-row justify-end w-full mt-4">
+      <button @click="handleMeasurementRequest" class="btn btn-secondary">Request Measurement</button>
+      <button @click="publishAas" class="btn btn-primary mx-8">Publish Passport</button>
     </div>
-    <div class="flex flex-row  w-11/12">
-      <div class="flex flex-row w-full">
+    <div class="flex flex-row w-11/12">
+      <div class="flex flex-row -mt-6 w-full">
         <div class="flex flex-col">
           <div class="bg-white rounded-lg p-4 mt-10">
             <div class="flex flex-row justify-between items-center w-11/12 ml-5">
-              <h1 class="font-bold text-2xl">Frisbee Asset</h1>
+              <h1 class="font-bold text-2xl">6DC Product Asset</h1>
             </div>
             <div class="flex flex-row justify-between items-center w-full">
               <img :src=imp alt="Frisbee Placeholder" class="h-48 m-6"/>
@@ -116,7 +124,7 @@
               <tbody>
               <!-- row 1 -->
               <tr v-for="property in selectedProperties">
-                <td>Property</td>
+                <td>{{ property.type }}</td>
                 <td>{{property.idShort}}</td>
                 <td>{{property.value + " " + property.unit}}</td>
                 <td>{{property.iri}}</td>
@@ -127,7 +135,7 @@
         </div>
       </div>
     </div>
-    <div v-show="isPublished" role="alert" class="alert alert-success">
+    <div v-show="isSuccess" role="alert" class="alert alert-success mt-4 w-11/12">
       <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6 shrink-0 stroke-current"
@@ -139,7 +147,7 @@
             stroke-width="2"
             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
-      <span>Product passport published!</span>
+      <span>{{ successMessage }}</span>
     </div>
   </div>
 </template>

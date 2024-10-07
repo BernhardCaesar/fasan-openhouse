@@ -12,7 +12,7 @@ function handleTipping(e) {
 
   if (store.products.includes(typed.value)) {
     const meta = new AasMetadata()
-    meta.updateSubmodelProperties("Nameplate", [{ idShort: "SerialNumber", iri: "", value: typed, unit: "" }])
+    meta.updateSubmodelProperties("Nameplate", [{ type: "Property", idShort: "SerialNumber", iri: "", value: typed, unit: "" }])
     store.meta = meta
     store.selectedCube = typed.value
     store.productview = true

@@ -10,7 +10,7 @@ import {store} from "./store.js";
 <template>
   <main class="flex flex-col items-center w-screen h-screen bg-base-200">
     <Navbar />
-    <div class="flex mt-24 w-full">
+    <div class="flex mt-16 w-full">
       <Search v-if="store.productview" />
       <Product v-else />
     </div>
